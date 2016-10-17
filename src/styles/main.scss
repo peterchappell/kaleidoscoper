@@ -2,27 +2,64 @@
 @include normalize();
 
 body {
-  background-color: #f5f5f5;
+  background-color: #000;
   color: #222;
 }
 
 header {
-  background-color: #fff;
-  padding: 20px;
+  background-color: #222;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
 }
 
 h1 {
+  color: #fff;
+  font-size: 20px;
   margin: 0;
 }
 
-.kd-canvas-container {
+.take-snapshot {
+  background-color: rgba(0,0,0,0.5);
+  bottom: 0;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  height: 30px;
+  left: 0;
+  line-height: 30px;
+  position: absolute;
+  right: 0;
+}
+
+.toggle-size {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 10px;
+  width: 70px;
+}
+
+.kd-canvas-figure {
   margin: 0;
   text-align: center;
 }
 
+.kd-canvas-container {
+  display: inline-block;
+  position: relative;
+}
+
 .kd-canvas {
   //width: 100%;
-  border: 1px solid #000;
+  display: block;
+  margin: 0 auto;
 }
 
 .loadingImage {

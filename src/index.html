@@ -17,8 +17,14 @@
           <header id="banner" class="banner">
             <h1>Kaleidoscoper</h1>
           </header>
-          <figure class="kd-canvas-container">
-            <canvas id="kaleidoscope" class="kd-canvas"></canvas>
+          <figure class="kd-canvas-figure">
+            <div class="kd-canvas-container">
+              <canvas id="kaleidoscope" class="kd-canvas"></canvas>
+              <footer>
+                <button class="toggle-size" id="toggleSize">><</button>
+                <a href="#" id="saveCanvas" class="take-snapshot" download="kaleidoscoper.jpg">Snapshot</a>
+              </footer>
+            </div>
           </figure>
         </section>
         <script src="scripts.js"></script>
