@@ -1,19 +1,20 @@
-import drawKaleidoscope from './drawKaleidoscope'
+import kaleidoscope from './kaleidoscope'
 import imageLoader from './imageLoader'
-import handleKaleidoscopeMovement from './handleKaleidoscopeMovement'
 import handleButtonSave from './handleButtonSave'
-import handleButtonCanvasProportions from './handleButtonCanvasProportions'
-import handleWindowResize from './handleWindowResize'
+import showFlickrPhotoInfo from './showFlickrPhotoInfo'
 
-function initKaleidoscopeWithImage(canvas, photoSrc) {
-  imageLoader(photoSrc).then((photo) => {
-    drawKaleidoscope(canvas, photo, 0, 0)
-    handleKaleidoscopeMovement(canvas, photo)
-    handleButtonCanvasProportions(canvas, photo)
-    handleButtonSave(canvas)
-    handleWindowResize(canvas, photo)
-  }).catch(() => {
-    console.error('ERROR: There was a problem loading the image.')
+function initKaleidoscopeWithImage(canvas, photoData) {
+  imageLoader(photoData.src).then((photo) => {
+    kaleidoscope.setPhoto(photo)
+    kaleidoscope.draw(canvas, 0, 0)
+
+    if (photoData.from === 'flickr') {
+      showFlickrPhotoInfo(photoData)
+    } else {
+      handleButtonSave(canvas)
+    }
+  }).catch((er) => {
+    console.error('ERROR: There was a problem loading the image.', er)
   })
 }
 

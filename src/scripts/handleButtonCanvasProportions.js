@@ -1,20 +1,18 @@
-import drawKaleidoscope from './drawKaleidoscope'
+import kaleidoscope from './kaleidoscope'
 import setCanvasProportions from './setCanvasProportions'
 
 const SQUARE = 'square'
+const toggleSizeButton = document.getElementById('toggleSize')
 
-function handleButtonCanvasProportions(canvas, photo) {
-  var toggleSizeButton = document.getElementById('toggleSize')
-  toggleSizeButton.addEventListener('click', function() {
+function handleButtonCanvasProportions(canvas) {
+  toggleSizeButton.addEventListener('click', function toggleSize() {
     if (canvas.classList.contains(SQUARE)) {
       canvas.classList.remove(SQUARE)
     } else {
       canvas.classList.add(SQUARE)
     }
     setCanvasProportions(canvas)
-    drawKaleidoscope(canvas, photo, 0, 0);
-  }, {
-    once: true
+    kaleidoscope.draw(canvas, 0, 0);
   })
 }
 

@@ -1,8 +1,7 @@
 import setCanvasProportions from './setCanvasProportions'
-import handleKaleidoscopeMovement from './handleKaleidoscopeMovement'
-import drawKaleidoscope from './drawKaleidoscope'
+import kaleidoscope from './kaleidoscope'
 
-function handleWindowResize(canvas, photo) {
+function handleWindowResize(canvas) {
   window.addEventListener("resize", resizeThrottler, false);
 
   var resizeTimeout;
@@ -19,8 +18,7 @@ function handleWindowResize(canvas, photo) {
 
   function actualResizeHandler() {
     setCanvasProportions(canvas)
-    handleKaleidoscopeMovement(photo)
-    drawKaleidoscope(canvas, photo, 0, 0)
+    kaleidoscope.draw(canvas, 0, 0)
   }
 }
 

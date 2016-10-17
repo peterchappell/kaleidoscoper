@@ -3,13 +3,22 @@ require('../index.html')
 require('../styles/main.scss');
 
 import setCanvasProportions from './setCanvasProportions'
-import prepDragEvents from './prepDragEvents'
 import initKaleidoscopeWithImage from './initKaleidoscopeWithImage'
+import getRandomImageFromFlickr from './getRandomImageFromFlickr'
+import handleButtonRandom from './handleButtonRandom'
+import handleButtonCanvasProportions from './handleButtonCanvasProportions'
+import handleMouseMovements from './handleMouseMovements'
+import handleWindowResize from './handleWindowResize'
 
 const canvas = document.getElementById('kaleidoscope')
 const photoSrc = require('../images/profilepic.jpg')
 
 setCanvasProportions(canvas)
-prepDragEvents();
+handleButtonRandom(canvas);
+handleButtonCanvasProportions(canvas)
+handleMouseMovements(canvas)
+handleWindowResize(canvas)
 
-initKaleidoscopeWithImage(canvas, photoSrc)
+getRandomImageFromFlickr().then(function(photoData) {
+  initKaleidoscopeWithImage(canvas, photoData)
+})

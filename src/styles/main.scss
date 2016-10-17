@@ -16,6 +16,7 @@ header {
 
 h1 {
   color: #fff;
+  float: left;
   font-size: 20px;
   margin: 0;
 }
@@ -68,4 +69,34 @@ h1 {
 
 .hide {
   display: none;
+}
+
+.loadNav {
+  float: right;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #fff;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.page-footer {
+  text-align: center;
+}
+
+.photo-info {
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  min-height: 34px;
+  a {
+    color: #fff;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
 }

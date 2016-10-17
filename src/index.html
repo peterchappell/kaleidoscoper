@@ -16,16 +16,22 @@
         <section>
           <header id="banner" class="banner">
             <h1>Kaleidoscoper</h1>
+            <nav class="loadNav">
+              <button id="getRandomImage" class="link-button">Random</button>
+            </nav>
           </header>
           <figure class="kd-canvas-figure">
             <div class="kd-canvas-container">
               <canvas id="kaleidoscope" class="kd-canvas"></canvas>
               <footer>
                 <button class="toggle-size" id="toggleSize">><</button>
-                <a href="#" id="saveCanvas" class="take-snapshot" download="kaleidoscoper.jpg">Snapshot</a>
               </footer>
             </div>
           </figure>
+          <footer id="footer" class="page-footer">
+            <a href="#" id="saveCanvas" class="take-snapshot hide" download="kaleidoscoper.jpg">Snapshot</a>
+            <div class="photo-info" id="photoInfo"></div>
+          </footer>
         </section>
         <script src="scripts.js"></script>
         <img src="" id="imageLoader" class="loadingImage" />

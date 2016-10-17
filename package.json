@@ -10,7 +10,8 @@
   "author": "Pete Chappell",
   "license": "ISC",
   "dependencies": {
-    "normalize-scss": "^5.0.3"
+    "normalize-scss": "^5.0.3",
+    "webpack-zepto": "0.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
