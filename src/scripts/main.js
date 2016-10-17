@@ -6,6 +6,7 @@ import setCanvasProportions from './setCanvasProportions'
 import initKaleidoscopeWithImage from './initKaleidoscopeWithImage'
 import getRandomImageFromFlickr from './getRandomImageFromFlickr'
 import handleButtonRandom from './handleButtonRandom'
+import handleButtonFacebook from './handleButtonFacebook'
 import handleButtonCanvasProportions from './handleButtonCanvasProportions'
 import handleMouseMovements from './handleMouseMovements'
 import handleWindowResize from './handleWindowResize'
@@ -15,6 +16,7 @@ const photoSrc = require('../images/profilepic.jpg')
 
 setCanvasProportions(canvas)
 handleButtonRandom(canvas);
+handleButtonFacebook(canvas);
 handleButtonCanvasProportions(canvas)
 handleMouseMovements(canvas)
 handleWindowResize(canvas)

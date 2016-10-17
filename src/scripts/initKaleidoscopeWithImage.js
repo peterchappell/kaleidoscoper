@@ -8,11 +8,9 @@ function initKaleidoscopeWithImage(canvas, photoData) {
     kaleidoscope.setPhoto(photo)
     kaleidoscope.draw(canvas, 0, 0)
 
-    if (photoData.from === 'flickr') {
-      showFlickrPhotoInfo(photoData)
-    } else {
-      handleButtonSave(canvas)
-    }
+    showFlickrPhotoInfo(photoData)
+    handleButtonSave(canvas, photoData)
+    
   }).catch((er) => {
     console.error('ERROR: There was a problem loading the image.', er)
   })
