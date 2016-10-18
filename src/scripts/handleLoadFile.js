@@ -14,10 +14,10 @@ function handleFileSelect(event) {
     reader.onload = (function(theFile) {
       return function(ev) {
         // Render image.
-        var container = document.getElementById('imageUploadArea');
-        container.innerHTML = ['<img src="', ev.target.result,'" title="', escape(theFile.name), '" id="loadedPhoto"/>'].join('');
-        //localStorage.setItem('img', ev.target.result);
-        drawLocalImage();
+        var photo = new Image()
+        photo.crossOrigin = 'Anonymous'
+        photo.src = ev.target.result;
+        drawLocalImage(photo);
       };
     })(file);
 
@@ -26,10 +26,8 @@ function handleFileSelect(event) {
   }
 }
 
-function drawLocalImage() {
-  var loadedPhoto = document.getElementById('loadedPhoto')
-  //loadedPhoto.crossOrigin = "Anonymous"
-  kaleidoscope.setPhoto(loadedPhoto)
+function drawLocalImage(photo) {
+  kaleidoscope.setPhoto(photo)
   kaleidoscope.draw(document.getElementById('kaleidoscope'), 0, 0)
   showFlickrPhotoInfo({
     from: 'facebook'

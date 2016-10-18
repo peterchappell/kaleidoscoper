@@ -1,3 +1,4 @@
+const saveButton = document.getElementById('saveCanvas')
 var canvas
 
 function clickToSave() {
@@ -6,15 +7,16 @@ function clickToSave() {
 }
 
 function handleButtonSave(canvasIn, photoData) {
-  var saveButton = document.getElementById('saveCanvas')
   canvas = canvasIn
   saveButton.removeEventListener('click', clickToSave);
-  if (photoData.from === 'facebook') {
-    saveButton.classList.remove('hide');
-    saveButton.addEventListener('click', clickToSave);
-  } else {
-    saveButton.classList.add('hide');
-  }
+  saveButton.classList.remove('hide');
+  saveButton.addEventListener('click', clickToSave);
+  // if (photoData.from === 'facebook') {
+  //   saveButton.classList.remove('hide');
+  //   saveButton.addEventListener('click', clickToSave);
+  // } else {
+  //   saveButton.classList.add('hide');
+  // }
 
 }
 

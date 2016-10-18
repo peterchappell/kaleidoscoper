@@ -7,7 +7,6 @@ function initKaleidoscopeWithImage(canvas, photoData) {
   imageLoader(photoData.src).then((photo) => {
     kaleidoscope.setPhoto(photo)
     kaleidoscope.draw(canvas, 0, 0)
-
     showFlickrPhotoInfo(photoData)
     handleButtonSave(canvas, photoData)
     
