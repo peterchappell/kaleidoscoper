@@ -7,6 +7,7 @@ import initKaleidoscopeWithImage from './initKaleidoscopeWithImage'
 import getRandomImageFromFlickr from './getRandomImageFromFlickr'
 import handleButtonRandom from './handleButtonRandom'
 import handleButtonFacebook from './handleButtonFacebook'
+import handleLoadFile from './handleLoadFile'
 import handleButtonCanvasProportions from './handleButtonCanvasProportions'
 import handleMouseMovements from './handleMouseMovements'
 import handleWindowResize from './handleWindowResize'
@@ -20,6 +21,7 @@ handleButtonFacebook(canvas);
 handleButtonCanvasProportions(canvas)
 handleMouseMovements(canvas)
 handleWindowResize(canvas)
+handleLoadFile()
 
 getRandomImageFromFlickr().then(function(photoData) {
   initKaleidoscopeWithImage(canvas, photoData)
