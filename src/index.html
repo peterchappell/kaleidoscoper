@@ -11,13 +11,13 @@
     </head>
     <body>
         <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser and this site won't work at all here. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
         <section>
           <header id="banner" class="banner">
             <h1>Kaleidoscoper</h1>
             <nav class="loadNav">
-              <input type="file" id="loadFile" name="files[]" />
+              <input type="file" id="loadFile" name="files[]" class="hidden" />
               <button id="getRandomImage" class="link-button">Random</button>
               <button id="getFacebookProfilePic" class="link-button">Facebook</button>
             </nav>
@@ -27,11 +27,11 @@
               <canvas id="kaleidoscope" class="kd-canvas"></canvas>
               <footer>
                 <button class="toggle-size" id="toggleSize">><</button>
+                <a href="#" id="saveCanvas" class="take-snapshot" download="kaleidoscoper.jpg">Snapshot</a>
               </footer>
             </div>
           </figure>
           <footer id="footer" class="page-footer">
-            <a href="#" id="saveCanvas" class="take-snapshot hide" download="kaleidoscoper.jpg">Snapshot</a>
             <div class="photo-info" id="photoInfo"></div>
           </footer>
         </section>

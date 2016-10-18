@@ -1,23 +1,28 @@
 import kaleidoscope from './kaleidoscope'
 import handleButtonSave from './handleButtonSave'
-import showFlickrPhotoInfo from './showFlickrPhotoInfo'
+import showPhotoInfo from './showPhotoInfo'
 
 var canvas
 var photo
 
 function handleFileSelect(event) {
-  var file = event.target.files[0]; // TODO: Check this...
+  var file = event.target.files[0];
+  var fileInfo = {
+    from: 'local'
+  }
 
   if (file.type.match('image.*')) {
     var reader = new FileReader();
 
     reader.onload = (function(theFile) {
       return function(ev) {
-        // Render image.
+        fileInfo.title = escape(theFile.name)
+        // Create image.
         var photo = new Image()
         photo.crossOrigin = 'Anonymous'
         photo.src = ev.target.result;
-        drawLocalImage(photo);
+        // Draw it
+        drawLocalImage(photo, fileInfo);
       };
     })(file);
 
@@ -26,15 +31,10 @@ function handleFileSelect(event) {
   }
 }
 
-function drawLocalImage(photo) {
+function drawLocalImage(photo, photoInfo) {
   kaleidoscope.setPhoto(photo)
-  kaleidoscope.draw(document.getElementById('kaleidoscope'), 0, 0)
-  showFlickrPhotoInfo({
-    from: 'facebook'
-  })
-  handleButtonSave(document.getElementById('kaleidoscope'), {
-    from: 'facebook'
-  })
+  kaleidoscope.draw(canvas, 0, 0)
+  showPhotoInfo(photoInfo)
 }
 
 function handleLoadFile(canvasIn) {

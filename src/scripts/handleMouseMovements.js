@@ -18,17 +18,17 @@ function prepDragEvents() {
   }, false);
 }
 
-function handleMouseMovements(canvas) {
+function handleMouseMovements(canvas, saveButton) {
   var isDrawing = false;
   prepDragEvents();
 
   canvas.addEventListener('mousedown', function (event) {
     isDrawing = true;
-    reDrawKaleidoscope(canvas, event.pageX, event.pageY)
+    reDrawKaleidoscope(canvas, event.pageX, event.pageY, isDrawing, saveButton)
   }, {once: true}, false);
   canvas.addEventListener('touchstart', function (event) {
     isDrawing = true;
-    reDrawKaleidoscope(canvas, event.pageX, event.pageY)
+    reDrawKaleidoscope(canvas, event.pageX, event.pageY, isDrawing, saveButton)
   }, {once: true}, false);
   canvas.addEventListener('mouseup', function (e) {
     isDrawing = false;
@@ -37,22 +37,23 @@ function handleMouseMovements(canvas) {
     isDrawing = false;
   }, {once: true}, false);
   canvas.addEventListener('mousemove', function (event) {
-    if (isDrawing) {
-      reDrawKaleidoscope(canvas, event.pageX, event.pageY)
-    }
+    reDrawKaleidoscope(canvas, event.pageX, event.pageY, isDrawing, saveButton)
   }, {once: true}, false);
   canvas.addEventListener('touchmove', function (event) {
-    if (isDrawing) {
-      reDrawKaleidoscope(canvas, event.touches[0].clientX, event.touches[0].clientY)
-    }
+    reDrawKaleidoscope(canvas, event.touches[0].clientX, event.touches[0].clientY, isDrawing, saveButton)
   }, {once: true}, false);
 }
 
-function reDrawKaleidoscope(canvas, eventPosX, eventPosY) {
-  var x = eventPosX - canvas.offsetParent.offsetLeft;
-  var y = eventPosY - canvas.offsetParent.offsetTop;
-  console.log('mouse', eventPosX, eventPosY, canvas.offsetParent.offsetLeft, canvas.offsetParent.offsetTop, x, y)
-  kaleidoscope.draw(canvas, x, y)
+function reDrawKaleidoscope(canvas, eventPosX, eventPosY, isDrawing, saveButton) {
+  if (isDrawing) {
+    saveButton.classList.remove('show')
+    var x = eventPosX - canvas.offsetParent.offsetLeft;
+    var y = eventPosY - canvas.offsetParent.offsetTop;
+    console.log('mouse', eventPosX, eventPosY, canvas.offsetParent.offsetLeft, canvas.offsetParent.offsetTop, x, y)
+    kaleidoscope.draw(canvas, x, y)
+  } else {
+    saveButton.classList.add('show')
+  }
 }
 
 export default handleMouseMovements

@@ -32,7 +32,7 @@ function fetchImageList(resolve, reject) {
     success: function(data) {
       console.log('FETCHING FROM FLICKR')
       filteredFlickrResults = data.photos.photo.filter(function(result) {
-        return result.url_l && result.pathalias
+        return result.url_l && result.url_l !== null && result.pathalias
       })
       resolve(selectRandomPhotoEntry())
     },
@@ -45,6 +45,7 @@ function fetchImageList(resolve, reject) {
 
 function selectRandomPhotoEntry() {
   var randomPhotoEntry = filteredFlickrResults[Math.floor(Math.random() * filteredFlickrResults.length-1)];
+  console.log('randomPhotoEntry', randomPhotoEntry)
   return {
     src: randomPhotoEntry.url_l,
     title: randomPhotoEntry.title || "Untitled",

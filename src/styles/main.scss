@@ -25,13 +25,23 @@ h1 {
   background-color: rgba(0,0,0,0.5);
   bottom: 0;
   color: #fff;
-  display: block;
+  display: none;
   font-weight: bold;
-  height: 30px;
+  height: 40px;
   left: 0;
-  line-height: 30px;
+  line-height: 40px;
   position: absolute;
   right: 0;
+}
+
+.take-snapshot.show {
+  animation: slide-up 0.24s ease-in 1;
+  display: block;
+}
+
+@keyframes slide-up {
+  0%   {bottom: -40px;}
+  100% {bottom: 0;}
 }
 
 .toggle-size {
@@ -67,12 +77,12 @@ h1 {
   max-width: 100%;
 }
 
-.hide {
-  display: none;
-}
-
 .loadNav {
   float: right;
+}
+
+.hidden {
+  display: none;
 }
 
 .link-button {
@@ -89,14 +99,24 @@ h1 {
 }
 
 .photo-info {
+  background-color: #000;
   color: #fff;
   display: block;
   font-size: 12px;
   min-height: 34px;
-  a {
+  position: relative;
+  z-index: 1;
+  a, .nolink {
     color: #fff;
     display: block;
     padding: 10px;
     text-decoration: none;
   }
+}
+
+.browserupgrade {
+  background-color: red;
+  color: #fff;
+  margin: 0;
+  padding: 1em;
 }

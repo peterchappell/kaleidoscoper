@@ -30,8 +30,9 @@ function getUserDetails() {
   // FB.api('/me', {fields: 'picture, first_name, last_name'}, function(response) {
   //     console.log(JSON.stringify(response));
   // });
-  FB.api('/me', function(response) {
-    loggedInInfo.name = response.name
+  FB.api('/me', {fields: 'name, link'}, function(response) {
+    loggedInInfo.title = response.name
+    loggedInInfo.page = response.link
   });
   FB.api('/me/picture', {type: 'large'}, function(response) {
     console.log('loaded picture', response)
