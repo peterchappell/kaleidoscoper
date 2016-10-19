@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <title>help</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="help" fill="#979797">
+            <path d="M9,100 C9,49.7420878 49.7420878,9 100,9 C150.257912,9 191,49.7420878 191,100 C191,150.257912 150.257912,191 100,191 C49.7420878,191 9,150.257912 9,100 Z M180.99,100 C180.99,55.2704581 144.729542,19.01 100,19.01 C55.2704581,19.01 19.01,55.2704581 19.01,100 C19.01,144.729542 55.2704581,180.99 100,180.99 C144.729542,180.99 180.99,144.729542 180.99,100 Z"></path>
+            <rect id="Rectangle" x="90" y="82" width="20" height="80"></rect>
+            <circle id="Oval-3" cx="100" cy="51" r="15"></circle>
+        </g>
+    </g>
+</svg>

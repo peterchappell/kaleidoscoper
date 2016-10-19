@@ -1,0 +1,19 @@
+// Photo info shown under the canvas
+
+.photo-info {
+  background-color: #000;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  min-height: 34px;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  a, .nolink {
+    color: #fff;
+    text-decoration: none;
+  }
+  .cc-icon {
+    vertical-align: middle;
+  }
+}

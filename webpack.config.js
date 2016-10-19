@@ -1,7 +1,9 @@
 var path = require("path")
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
+  //context: path.join(__dirname, 'src'),
   entry: {
     //styles: './src/styles/main.scss'//,
     scripts: './src/scripts/main.js'
@@ -45,6 +47,11 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('../public/main.css', {
         allChunks: true
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: 'images/**/*'
+      }
+    ])
   ]
 }

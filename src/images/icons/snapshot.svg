@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Take a snapshot</title>
+            <path d="M20,60 L180,60 L180,160 L20,160 L20,60 Z M57,40 L143,40 L143,60 L57,60 L57,40 Z M100,146 C120.98682,146 138,128.98682 138,108 C138,87.0131795 120.98682,70 100,70 C79.0131795,70 62,87.0131795 62,108 C62,128.98682 79.0131795,146 100,146 Z M143,70 L170,70 L170,85 L143,85 L143,70 Z"></path>
+            <circle cx="100" cy="108" r="25"></circle>
+</svg>

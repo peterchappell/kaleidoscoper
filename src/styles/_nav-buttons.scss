@@ -1,0 +1,42 @@
+.nav-button {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  float: right;
+  line-height: 40px;
+  margin: 0 0 0 5px;
+  text-decoration: none;
+  .icon {
+    display: inline-block;
+    float: left;
+    height: 40px;
+    margin: 0 2px 0 0;
+    vertical-align: middle;
+    svg {
+      fill: #fff;
+      height: 40px;
+      width: 30px;
+    }
+  }
+  .text {
+    display: none;
+  }
+}
+.nav-button.profile-pic {
+  margin: 0;
+}
+
+@media (min-width: 500px) {
+  .nav-button {
+    margin-left: 20px;
+    .text {
+      display: inline;
+    }
+  }
+  .nav-button.profile-pic {
+    margin-left: 15px;
+    .icon {
+      margin-right: -2px;
+    }
+  }
+}

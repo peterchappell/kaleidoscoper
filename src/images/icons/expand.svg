@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Use full screen canvas</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="expand" fill="#fff">
+            <path d="M55,55 L145,55 L145,145 L55,145 L55,55 Z M65,65 L135,65 L135,135 L65,135 L65,65 Z" id="Combined-Shape"></path>
+            <polygon id="Triangle-2" points="115 40 85 40 100 10"></polygon>
+            <polygon id="Triangle-2" points="160 115 160 85 190 100"></polygon>
+            <polygon id="Triangle-2" points="40 115 40 85 10 100"></polygon>
+            <polygon id="Triangle-2" points="115 160 85 160 100 190"></polygon>
+        </g>
+    </g>
+</svg>

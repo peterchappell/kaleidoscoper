@@ -1,0 +1,33 @@
+// The styling of the UI for the toggle size/proportion
+
+.toggle-size {
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  height: 70px;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 10px;
+  width: 70px;
+  svg {
+    fill: #fff;
+    height: 70px;
+    width: 70px;
+  }
+}
+
+.toggle-size.show {
+  animation: fade-in 0.24s ease-in 1;
+  display: block;
+  opacity: 1;
+}
+
+@keyframes fade-in {
+  0%   {opacity: 0;}
+  100% {bottom: 1;}
+}

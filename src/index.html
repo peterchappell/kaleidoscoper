@@ -14,20 +14,34 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser and this site won't work at all here. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
         <section>
-          <header id="banner" class="banner">
+          <header id="banner" class="page-banner">
             <h1>Kaleidoscoper</h1>
+            <div class="loading-animation hidden" id="loading"></div>
             <nav class="loadNav">
-              <input type="file" id="loadFile" name="files[]" class="hidden" />
-              <button id="getRandomImage" class="link-button">Random</button>
-              <button id="getFacebookProfilePic" class="link-button">Facebook</button>
+              <a href="#" id="getFacebookProfilePic" class="nav-button profile-pic">
+                <span class="icon">FB</span> <span class="text">Profile pic</span>
+              </a>
+              <a href="#fileUI" id="loadFileLink" class="nav-button">
+                <span class="icon">O</span> <span class="text">Local</span>
+              </a>
+              <a href="#" id="getRandomImage" class="nav-button">
+                <span class="icon">R</span> <span class="text">Random</span>
+              </a>
             </nav>
           </header>
+          <aside id="fileUI" class="file-ui">
+            <div class="file-ui-container">
+              <p>Use this to load a photo from your file system.</p>
+              <input type="file" id="loadFile" class="file-loader" name="files[]" />
+              <div><a href="#" class="cancel-file-ui" id="cancelFileUI">Cancel</a></div>
+            </div>
+          </aside>
           <figure class="kd-canvas-figure">
             <div class="kd-canvas-container">
               <canvas id="kaleidoscope" class="kd-canvas"></canvas>
               <footer>
-                <button class="toggle-size" id="toggleSize">><</button>
-                <a href="#" id="saveCanvas" class="take-snapshot" download="kaleidoscoper.jpg">Snapshot</a>
+                <a href="#" class="toggle-size" id="toggleSize"><span class="icon">><</span></a>
+                <a href="#" id="saveCanvas" class="take-snapshot" download="kaleidoscoper.jpg"><span class="icon">Take snapshot</span></a>
               </footer>
             </div>
           </figure>
@@ -37,6 +51,5 @@
         </section>
         <div id="imageUploadArea"></div>
         <script src="scripts.js"></script>
-        <img src="" id="imageLoader" class="loadingImage" />
     </body>
 </html>

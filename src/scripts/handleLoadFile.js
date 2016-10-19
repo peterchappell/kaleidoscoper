@@ -32,6 +32,7 @@ function handleFileSelect(event) {
 }
 
 function drawLocalImage(photo, photoInfo) {
+  fileUI.classList.remove('show')
   kaleidoscope.setPhoto(photo)
   kaleidoscope.draw(canvas, 0, 0)
   showPhotoInfo(photoInfo)

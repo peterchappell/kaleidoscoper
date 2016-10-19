@@ -1,0 +1,29 @@
+// The UI for the snapshot button etc
+
+.take-snapshot {
+  background-color: rgba(0,0,0,0.5);
+  bottom: 0;
+  color: #fff;
+  display: none;
+  font-weight: bold;
+  height: 50px;
+  left: 0;
+  line-height: 50px;
+  position: absolute;
+  right: 0;
+  svg {
+    fill: #fff;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.take-snapshot.show {
+  animation: slide-up 0.24s ease-in 1;
+  display: block;
+}
+
+@keyframes slide-up {
+  0%   {bottom: -40px;}
+  100% {bottom: 0;}
+}

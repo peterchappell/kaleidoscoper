@@ -1,4 +1,5 @@
 import initKaleidoscopeWithImage from './initKaleidoscopeWithImage'
+const profileButton = document.getElementById('getFacebookProfilePic')
 
 var canvas;
 var isLoggedIn;
@@ -44,7 +45,11 @@ function getUserDetails() {
 
 function handleButtonFacebook(canvasIn) {
   canvas = canvasIn
-  document.getElementById('getFacebookProfilePic').addEventListener('click', function() {
+
+  profileButton.querySelector('.icon').innerHTML = require('raw!../images/icons/profilepic.svg')
+  profileButton.addEventListener('click', function(ev) {
+    ev.preventDefault()
+    fileUI.classList.remove('show')
     if (isLoggedIn) {
       console.log('We should try and load the profile pic')
       getUserDetails();
