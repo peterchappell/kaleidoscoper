@@ -1,12 +1,11 @@
 // pull the index.html file with webpack and use this in it
 require('../download.html')
-require('../styles/main.scss');
 
-var dataImage = localStorage.getItem('kaleidoscoper-saved');
+var dataImage = localStorage.getItem('kaleidoscoper-saved')
 
 if (dataImage) {
   var savedImage = document.getElementById('savedImage')
-  savedImage.src = dataImage;
+  savedImage.src = dataImage
 } else {
   document.getElementById('downloadHelpText').innerHTML = 
     `<p>I'm sorry. It doesn't look like you'll be able to use this browser/device combination to save files

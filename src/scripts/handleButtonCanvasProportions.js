@@ -8,7 +8,7 @@ const contractIcon = require('raw!../images/icons/contract.svg')
 function handleButtonCanvasProportions(canvas, toggleSizeButton) {
   toggleSizeButton.innerHTML = contractIcon
   toggleSizeButton.addEventListener('click', function(ev) {
-    ev.preventDefault();
+    ev.preventDefault()
     if (canvas.classList.contains(SQUARE)) {
       toggleSizeButton.innerHTML = contractIcon
       canvas.classList.remove(SQUARE)
@@ -17,7 +17,7 @@ function handleButtonCanvasProportions(canvas, toggleSizeButton) {
       canvas.classList.add(SQUARE)
     }
     setCanvasProportions(canvas)
-    kaleidoscope.draw(canvas, 0, 0);
+    kaleidoscope.draw(canvas, 0, 0)
   })
 }
 

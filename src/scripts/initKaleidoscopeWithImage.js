@@ -11,7 +11,7 @@ function initKaleidoscopeWithImage(canvas, photoData) {
     kaleidoscope.draw(canvas, 0, 0)
     showPhotoInfo(photoData)
   }).catch((er) => {
-    statusMessage.showProblem();
+    statusMessage.showProblem()
     console.error('ERROR: There was a problem loading the image.', er)
   })
 }

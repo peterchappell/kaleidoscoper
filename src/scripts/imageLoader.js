@@ -6,10 +6,10 @@ function imageLoader(photoSrc) {
       photo.onload = function() {
         resolve(this)
       }
-      photo.onerror = function(error) {
+      photo.onerror = function() {
         reject()
       }
-      photo.src = photoSrc;
+      photo.src = photoSrc
     }
   )
 }

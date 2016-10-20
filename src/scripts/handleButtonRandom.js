@@ -4,7 +4,7 @@ import statusMessage from './statusMessage'
 
 const randomImageButton = document.getElementById('getRandomImage')
 
-function handleButtonRandom(canvas) {
+function handleButtonRandom(canvas, fileUI) {
   statusMessage.hide()
   randomImageButton.querySelector('.icon').innerHTML = require('raw!../images/icons/shuffle.svg')
   randomImageButton.addEventListener('click', function(ev) {

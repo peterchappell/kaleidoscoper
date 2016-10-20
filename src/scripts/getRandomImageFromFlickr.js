@@ -1,4 +1,4 @@
-import $ from 'webpack-zepto';
+import $ from 'webpack-zepto'
 import statusMessage from './statusMessage'
 
 const flickrApiKey = 'a4276525d0e70154bc4f3a82150f141b'
@@ -62,7 +62,6 @@ function getLicenseInfo(licenseNumber) {
       name: 'Attribution License',
       icon: 'by'
     }
-    return 'by'
   } else if (licenseNumber === '5') {
     return {
       number: licenseNumber,
@@ -73,11 +72,11 @@ function getLicenseInfo(licenseNumber) {
 }
 
 function selectRandomPhotoEntry() {
-  var randomPhotoEntry = filteredFlickrResults[Math.floor(Math.random() * filteredFlickrResults.length)];
+  var randomPhotoEntry = filteredFlickrResults[Math.floor(Math.random() * filteredFlickrResults.length)]
   var licenseInfo = getLicenseInfo(randomPhotoEntry.license)
   return {
     src: randomPhotoEntry.url_l,
-    title: randomPhotoEntry.title || "Untitled",
+    title: randomPhotoEntry.title || 'Untitled',
     owner: randomPhotoEntry.ownername,
     license: licenseInfo,
     page: 'https://www.flickr.com/photos/' + randomPhotoEntry.pathalias + '/' + randomPhotoEntry.id,

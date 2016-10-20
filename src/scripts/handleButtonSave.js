@@ -3,7 +3,7 @@ import statusMessage from './statusMessage'
 const hasDownloadSupport = checkDownloadSupport()
 
 function checkDownloadSupport() {
-  var a = document.createElement('a');
+  var a = document.createElement('a')
   return typeof a.download !== 'undefined'
 }
 
@@ -25,12 +25,12 @@ function handleButtonSave(canvas, saveButton) {
         saveButton.setAttribute('download', `kaleidoscoper-${Date.now()}.jpg`)
         saveButton.href = savedCanvas
       } else if (savedCanvas) {
-        ev.preventDefault();
+        ev.preventDefault()
         // save the image to local storage
-        localStorage.setItem('kaleidoscoper-saved',canvas.toDataURL());
+        localStorage.setItem('kaleidoscoper-saved',canvas.toDataURL())
         location.href = 'download.html'
       }
     })
-};
+}
 
 export default handleButtonSave

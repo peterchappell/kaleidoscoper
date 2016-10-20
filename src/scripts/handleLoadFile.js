@@ -1,19 +1,18 @@
 import kaleidoscope from './kaleidoscope'
-import handleButtonSave from './handleButtonSave'
 import showPhotoInfo from './showPhotoInfo'
 import statusMessage from './statusMessage'
 
 var canvas
-var photo
+var fileUI
 
 function handleFileSelect(event) {
-  var file = event.target.files[0];
+  var file = event.target.files[0]
   var fileInfo = {
     from: 'local'
   }
 
   if (file.type.match('image.*')) {
-    var reader = new FileReader();
+    var reader = new FileReader()
 
     reader.onload = (function(theFile) {
       return function(ev) {
@@ -21,19 +20,19 @@ function handleFileSelect(event) {
         // Create image.
         var photo = new Image()
         photo.crossOrigin = 'Anonymous'
-        photo.src = ev.target.result;
+        photo.src = ev.target.result
         // Draw it
         try {
-          drawLocalImage(photo, fileInfo);
+          drawLocalImage(photo, fileInfo)
         } catch(er) {
-          statusMessage.showLoadProblem();
+          statusMessage.showLoadProblem()
         }
         
-      };
-    })(file);
+      }
+    })(file)
 
     // Read in the image file as a data URL.
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(file)
   }
 }
 
@@ -44,9 +43,10 @@ function drawLocalImage(photo, photoInfo) {
   showPhotoInfo(photoInfo)
 }
 
-function handleLoadFile(canvasIn) {
+function handleLoadFile(canvasIn, fileUIIn) {
   canvas = canvasIn
-  document.getElementById('loadFile').addEventListener('change', handleFileSelect, false);
+  fileUI = fileUIIn
+  document.getElementById('loadFile').addEventListener('change', handleFileSelect, false)
 }
 
 export default handleLoadFile

@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "globals": {
+      "require": false,
+      "module": false
+    },
+    "rules": {
+        "no-console": [
+            "error",
+            {"allow": ["warn", "error"]}
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "warn",
+            "never"
+        ]
+    }
+}

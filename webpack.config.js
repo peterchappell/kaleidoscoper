@@ -1,31 +1,32 @@
-var path = require("path")
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
+/*eslint-env node*/
 
-module.exports = {
-  //context: path.join(__dirname, 'src'),
+const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const validate = require('webpack-validator')
+const CustomValidationSchema = require('webpack-validator').Joi
+
+const commonConfig = {
+  context: path.join(__dirname, 'src'),
   entry: {
-    //styles: './src/styles/main.scss'//,
-    scripts: './src/scripts/main.js',
-    download: './src/scripts/download.js'
+    styles: './styles/main.scss',
+    scripts: './scripts/main.js',
+    download: './scripts/download.js'
   },
   output: {
     path: path.resolve(__dirname, 'public/'),
     filename: '[name].js'
   },
   devServer: {
-    contentBase: "public"
+    contentBase: 'public'
   },
   module: {
     loaders: [
-      // TODO: Re-enable this for a prod build?
-      // {
-      //   test: /\.scss$/,
-      //   loader: ExtractTextPlugin.extract('css!sass')
-      // },
       {
         test: /\.scss$/,
-        loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ]
+        loader: ExtractTextPlugin.extract('css!sass')
       },
       {
         test: /\.js$/,
@@ -52,7 +53,43 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: 'images/**/*'
+      },
+      {
+        from: 'favicon.ico'
+      },
+      {
+        from: 'kaleidoscoper-logo.png'
       }
     ])
   ]
 }
+
+const prodConfig = {
+  devtool: 'cheap-module-source-map',
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: true
+      }
+    })
+  ]
+}
+
+var config
+
+if (process.env.npm_lifecycle_event === 'prod') {
+  config = merge(commonConfig, prodConfig, {})
+} else {
+  config = commonConfig
+}
+
+const schemaExtension = CustomValidationSchema.object({
+  sassLoader: CustomValidationSchema.any()
+})
+
+module.exports = validate(config, {schemaExtension: schemaExtension})
