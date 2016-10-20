@@ -26,7 +26,6 @@ function handleFileSelect(event) {
         try {
           drawLocalImage(photo, fileInfo);
         } catch(er) {
-          console.error('ERROR: Could not load file', er)
           statusMessage.showLoadProblem();
         }
         

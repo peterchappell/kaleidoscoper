@@ -6,7 +6,8 @@ module.exports = {
   //context: path.join(__dirname, 'src'),
   entry: {
     //styles: './src/styles/main.scss'//,
-    scripts: './src/scripts/main.js'
+    scripts: './src/scripts/main.js',
+    download: './src/scripts/download.js'
   },
   output: {
     path: path.resolve(__dirname, 'public/'),

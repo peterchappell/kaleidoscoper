@@ -15,6 +15,10 @@ h1 {
   float: left;
   font-size: 20px;
   margin: 0;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 p {
@@ -67,3 +71,4 @@ button, .button {
 @import "./canvas";
 @import "./loading";
 @import "./status-panel";
+@import "./download";

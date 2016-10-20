@@ -16,7 +16,6 @@ window.fbAsyncInit = function() {
     version    : 'v2.6'
   });
   FB.getLoginStatus(function(response) {
-    console.log('FB response', response)
     isLoggedIn = response.status === 'connected'
   });
 };
@@ -30,9 +29,6 @@ window.fbAsyncInit = function() {
  }(document, 'script', 'facebook-jssdk'));
 
 function getUserDetails() {
-  // FB.api('/me', {fields: 'picture, first_name, last_name'}, function(response) {
-  //     console.log(JSON.stringify(response));
-  // });
   FB.api('/me', {fields: 'name, link'}, function(response) {
     loggedInInfo.title = response.name
     loggedInInfo.page = response.link
@@ -53,13 +49,10 @@ function handleButtonFacebook(canvasIn) {
     ev.preventDefault()
     fileUI.classList.remove('show')
     if (isLoggedIn) {
-      console.log('We should try and load the profile pic')
       getUserDetails();
     } else {
-      console.log('We should show the facebook login button')
       FB.login(function(response) {
         if (response.status === 'connected') {
-          console.log('great! now we have a logged in user so we should load the profile pic')
           getUserDetails();
         }
       }, {scope: 'public_profile,email'});
@@ -68,7 +61,6 @@ function handleButtonFacebook(canvasIn) {
 }
 
 function loadFBImage() {
-  console.log('loading with', loggedInInfo)
   initKaleidoscopeWithImage(canvas, loggedInInfo)
 }
 

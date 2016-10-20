@@ -1,0 +1,18 @@
+.saved-image {
+  margin: 10px 40px;
+  img {
+    max-width: 100%;
+  }
+}
+
+.download-main {
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .download-main {
+    padding: 15px;
+  }
+}

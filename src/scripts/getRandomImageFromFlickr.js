@@ -1,4 +1,5 @@
 import $ from 'webpack-zepto';
+import statusMessage from './statusMessage'
 
 const flickrApiKey = 'a4276525d0e70154bc4f3a82150f141b'
 const flickrSearchUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search' +
@@ -14,7 +15,6 @@ function getRandomImageFromFlickr() {
   return new Promise(
     (resolve, reject) => {
       if (filteredFlickrResults && filteredFlickrResults.length) {
-        console.log('GETTING FROM CACHE')
         resolve(selectRandomPhotoEntry())
       } else {
         fetchImageList(resolve, reject)
@@ -30,14 +30,14 @@ function fetchImageList(resolve, reject) {
     dataType: 'json',
     timeout: 5000,
     success: function(data) {
-      console.log('FETCHING FROM FLICKR')
       filteredFlickrResults = data.photos.photo.filter(function(result) {
         return result.url_l && result.url_l !== null && result.pathalias
       })
       resolve(selectRandomPhotoEntry())
     },
     error: function(xhr, type){
-      console.log('ERROR', xhr, type)
+      statusMessage.showFlickrApiProblem()
+      console.error('ERROR: Could not get image list from Flickr', type)
       reject()
     }
   })
@@ -74,7 +74,6 @@ function getLicenseInfo(licenseNumber) {
 
 function selectRandomPhotoEntry() {
   var randomPhotoEntry = filteredFlickrResults[Math.floor(Math.random() * filteredFlickrResults.length)];
-  console.log('randomPhotoEntry', randomPhotoEntry)
   var licenseInfo = getLicenseInfo(randomPhotoEntry.license)
   return {
     src: randomPhotoEntry.url_l,

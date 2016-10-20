@@ -7,7 +7,6 @@ function handleButtonLoad(fileUI) {
   statusMessage.hide()
   loadButton.querySelector('.icon').innerHTML = require('raw!../images/icons/open.svg')
   loadButton.addEventListener('click', function(ev) {
-    console.log('clicked load button');
     ev.preventDefault()
     if (fileUI.classList.contains('show')) {
       fileUI.classList.remove('show')

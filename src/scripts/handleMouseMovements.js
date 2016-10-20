@@ -50,13 +50,11 @@ function reDrawKaleidoscope(canvas, eventPosX, eventPosY, isDrawing, saveButton,
     hideKaleidoscopeUI(saveButton, toggleSizeButton)
     var x = eventPosX - canvas.offsetParent.offsetLeft;
     var y = eventPosY - canvas.offsetParent.offsetTop;
-    console.log('mouse', eventPosX, eventPosY, canvas.offsetParent.offsetLeft, canvas.offsetParent.offsetTop, x, y)
     kaleidoscope.draw(canvas, x, y)
   }
 }
 
 function showKaleidoscopeUI(saveButton, toggleSizeButton) {
-  console.log('show Kaleidoscoper UI')
   saveButton.classList.add('show')
   toggleSizeButton.classList.add('show')
 }
