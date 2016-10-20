@@ -1,6 +1,7 @@
 import kaleidoscope from './kaleidoscope'
 import handleButtonSave from './handleButtonSave'
 import showPhotoInfo from './showPhotoInfo'
+import statusMessage from './statusMessage'
 
 var canvas
 var photo
@@ -22,7 +23,13 @@ function handleFileSelect(event) {
         photo.crossOrigin = 'Anonymous'
         photo.src = ev.target.result;
         // Draw it
-        drawLocalImage(photo, fileInfo);
+        try {
+          drawLocalImage(photo, fileInfo);
+        } catch(er) {
+          console.error('ERROR: Could not load file', er)
+          statusMessage.showLoadProblem();
+        }
+        
       };
     })(file);
 

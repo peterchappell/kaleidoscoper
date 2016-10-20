@@ -1,7 +1,10 @@
+import statusMessage from './statusMessage'
+
 const loadButton = document.getElementById('loadFileLink')
 const cancelLoadButton = document.getElementById('cancelFileUI')
 
 function handleButtonLoad(fileUI) {
+  statusMessage.hide()
   loadButton.querySelector('.icon').innerHTML = require('raw!../images/icons/open.svg')
   loadButton.addEventListener('click', function(ev) {
     console.log('clicked load button');

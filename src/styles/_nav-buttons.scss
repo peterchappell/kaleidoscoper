@@ -4,13 +4,13 @@
   font-size: 14px;
   float: right;
   line-height: 40px;
-  margin: 0 0 0 5px;
+  margin-left: 5px;
+  padding: 0 5px;
   text-decoration: none;
   .icon {
     display: inline-block;
     float: left;
     height: 40px;
-    margin: 0 2px 0 0;
     vertical-align: middle;
     svg {
       fill: #fff;
@@ -28,15 +28,18 @@
 
 @media (min-width: 500px) {
   .nav-button {
-    margin-left: 20px;
+    margin-left: 15px;
     .text {
       display: inline;
     }
+    .icon {
+      margin: 0 2px 0 0;
+    }
   }
   .nav-button.profile-pic {
-    margin-left: 15px;
+    margin-left: 10px;
     .icon {
-      margin-right: -2px;
+      margin-right: 0;
     }
   }
 }

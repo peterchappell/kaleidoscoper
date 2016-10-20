@@ -1,21 +1,19 @@
 import kaleidoscope from './kaleidoscope'
 
 function prepDragEvents(canvas) {
-  document.body.addEventListener('touchstart', function (e) {
-    if (e.target == canvas) {
-      e.preventDefault();
+  document.body.addEventListener('touchstart', stopBodyScrolling, {passive: false}, false)
+  document.body.addEventListener('touchend', stopBodyScrolling, {passive: false}, false)
+  document.body.addEventListener('touchmove', stopBodyScrolling, {passive: false}, false)
+
+  function stopBodyScrolling(e) {
+    try {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    } catch (er) {
+      console.warn('Unable to stop body movement', er)
     }
-  }, {passive: false}, false);
-  document.body.addEventListener('touchend', function (e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, {passive: false}, false);
-  document.body.addEventListener('touchmove', function (e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, {passive: false}, false);
+  }
 }
 
 function handleMouseMovements(canvas, saveButton, toggleSizeButton) {

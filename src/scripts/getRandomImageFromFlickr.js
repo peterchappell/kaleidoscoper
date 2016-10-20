@@ -73,7 +73,7 @@ function getLicenseInfo(licenseNumber) {
 }
 
 function selectRandomPhotoEntry() {
-  var randomPhotoEntry = filteredFlickrResults[Math.floor(Math.random() * filteredFlickrResults.length-1)];
+  var randomPhotoEntry = filteredFlickrResults[Math.floor(Math.random() * filteredFlickrResults.length)];
   console.log('randomPhotoEntry', randomPhotoEntry)
   var licenseInfo = getLicenseInfo(randomPhotoEntry.license)
   return {

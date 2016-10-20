@@ -1,0 +1,24 @@
+.status-panel {
+  background-color: rgba(0,0,0,0.75);
+  bottom: 0;
+  color: #fff;
+  display: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 15;
+}
+
+.status-panel.show {
+  display: block;
+}
+
+.status-panel-content {
+  left: 10px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}

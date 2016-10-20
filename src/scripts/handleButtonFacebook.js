@@ -1,4 +1,6 @@
 import initKaleidoscopeWithImage from './initKaleidoscopeWithImage'
+import statusMessage from './statusMessage'
+
 const profileButton = document.getElementById('getFacebookProfilePic')
 
 var canvas;
@@ -45,7 +47,7 @@ function getUserDetails() {
 
 function handleButtonFacebook(canvasIn) {
   canvas = canvasIn
-
+  statusMessage.hide()
   profileButton.querySelector('.icon').innerHTML = require('raw!../images/icons/profilepic.svg')
   profileButton.addEventListener('click', function(ev) {
     ev.preventDefault()

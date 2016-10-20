@@ -37,7 +37,7 @@ p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   height: 40px;
   line-height: 40px;
-  padding: 0 10px;
+  padding: 0 5px 0 10px;
 }
 
 @media (min-width: 500px) {
@@ -50,10 +50,20 @@ p {
   text-align: center;
 }
 
+button, .button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+}
+
 @import "./snapshot";
 @import "./toggle-size";
 @import "./photo-info";
 @import "./load-from-file";
 @import "./nav-buttons";
 @import "./canvas";
-@import "./loading"
+@import "./loading";
+@import "./status-panel";
