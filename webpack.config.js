@@ -59,6 +59,9 @@ const commonConfig = {
       },
       {
         from: 'kaleidoscoper-logo.png'
+      },
+      {
+        from: 'apple-touch-icon.png'
       }
     ])
   ]
