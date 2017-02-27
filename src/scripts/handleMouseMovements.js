@@ -24,25 +24,25 @@ function handleMouseMovements(canvas, saveButton, toggleSizeButton) {
   canvas.addEventListener('mousedown', function (event) {
     isDrawing = true
     reDrawKaleidoscope(canvas, event.pageX, event.pageY, isDrawing, saveButton, toggleSizeButton)
-  }, {once: true}, false)
+  }, {once: false}, false)
   canvas.addEventListener('touchstart', function (event) {
     isDrawing = true
     reDrawKaleidoscope(canvas, event.pageX, event.pageY, isDrawing, saveButton, toggleSizeButton)
-  }, {once: true}, false)
+  }, {once: false}, false)
   canvas.addEventListener('mouseup', function () {
     showKaleidoscopeUI(saveButton, toggleSizeButton)
     isDrawing = false
-  }, {once: true}, false)
+  }, {once: false}, false)
   canvas.addEventListener('touchend', function () {
     showKaleidoscopeUI(saveButton, toggleSizeButton)
     isDrawing = false
-  }, {once: true}, false)
+  }, {once: false}, false)
   canvas.addEventListener('mousemove', function (event) {
     reDrawKaleidoscope(canvas, event.pageX, event.pageY, isDrawing, saveButton, toggleSizeButton)
-  }, {once: true}, false)
+  }, {once: false}, false)
   canvas.addEventListener('touchmove', function (event) {
     reDrawKaleidoscope(canvas, event.touches[0].clientX, event.touches[0].clientY, isDrawing, saveButton, toggleSizeButton)
-  }, {once: true}, false)
+  }, {once: false}, false)
 }
 
 function reDrawKaleidoscope(canvas, eventPosX, eventPosY, isDrawing, saveButton, toggleSizeButton) {
